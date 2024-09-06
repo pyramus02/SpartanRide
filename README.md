@@ -1,12 +1,12 @@
-#Title : SpartanRide
+##Title : SpartanRide
 
-#Team Members: Kannan, Elijah, Aidan
+##Team Members: Kannan, Elijah, Aidan
 
 #Description: 
 >SpartanRide is a carpooling and ride-sharing platform designed specifically for UNCG students, faculty, and staff.
 >The system aims to provide a convenient, reliable, and sustainable transportation solution for the UNCG community.
 
-#Overview:
+##Overview:
 >SpartanRide will allow users to create profiles, view available rides, subscribe to rides, and write reviews. 
 >Drivers will be able to create profiles, offer rides, and view passenger statistics. The system administrator will manage user access, moderate rides, and reviews.
 
@@ -18,7 +18,7 @@
 
 >SysAdmins can monitor posts, they will be able to flag and delete ride cards, as well as reviews and comments.
 
-#User Roles:
+##User Roles:
 
 >Customer (Rider): Create profile, view available rides, subscribe to rides, write reviews
 
@@ -26,7 +26,7 @@
 
 >SysAdmin: Manage user access, moderate rides, reviews
 
-#System Features:
+##System Features:
 
 >User registration and profile management
 
@@ -38,6 +38,6 @@
 
 >User access management and moderation for SysAdmins
 
-#Google Maps API : 
+##Google Maps API : 
 >https://developers.google.com/maps/documentation 
 
