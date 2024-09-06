@@ -1,6 +1,6 @@
 ## Title : SpartanRide
 
-##Team Members: Kannan, Elijah, Aidan
+## Team Members: Kannan, Elijah, Aidan
 
 ## Description: 
 >SpartanRide is a carpooling and ride-sharing platform designed specifically for UNCG students, faculty, and staff.
