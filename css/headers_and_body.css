@@ -49,9 +49,29 @@
 }
 
 .roleBox{
-    border: #191a36;
+    border-color: #191a36;
     border-radius: 50px;
+    border-style: solid;
+    width: 150px;
+    height: 150px;
+    align-content: center;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
 }
+
+.floatContainer{
+    padding: 20px;
+}
+
+.floatChild{
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 
 html{
     background-color: #bac5f5;
