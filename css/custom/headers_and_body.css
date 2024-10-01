@@ -4,7 +4,9 @@
     top: 0;
     left: 0;
     padding: 10px;
+    padding-bottom: 0px;
     width: 100%;
+    height: 15%;
     margin-bottom: 50px;
 
     border-left: darkslateblue;
@@ -13,14 +15,19 @@
     border-bottom: gold;
     border-bottom-width: thick;
     border-style: solid;
-
-
 }
+
+.headerTitle{
+    color: gold;
+    padding-right: 45px;
+    font-size: 40px;
+}
+
 
 .headerLeft{
     position: absolute;
     font-size: 25px;
-    left: 250px;
+    left: 80px;
     top: 40%;
     bottom: 50%;
     padding-left: 50px;
@@ -28,10 +35,9 @@
 
 .headerRight{
     position: absolute;
-    margin-right: 0;
-    margin-left: 85%;
     font-size: 25px;
-    top: 40%;
+    margin-left: 85%;
+    top: 55%;
     bottom: 50%;
 }
 
@@ -46,7 +52,18 @@
     color: #191a36;
     padding: 25px;
     padding-left: 40px;
+
 }
+
+.text1{
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    color: #191a36;
+    padding: 25px;
+    padding-left: 40px;
+}
+
+
 
 .roleBox{
     border-color: #191a36;
