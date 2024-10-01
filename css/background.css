@@ -6,6 +6,31 @@
     padding-left: 10px;
     z-index: 999;
     width: 100%;
+
+    border-left: darkslateblue;
+    border-right: darkslateblue;
+    border-top: darkslateblue;
+    border-bottom: gold;
+    border-bottom-width: thick;
+    border-style: solid;
+}
+
+.headerLeft{
+    position: absolute;
+    font-size: 25px;
+    left: 250px;
+    top: 40%;
+    bottom: 50%;
+    padding-left: 50px;
+}
+
+.headerRight{
+    position: absolute;
+    margin-right: 0;
+    margin-left: 85%;
+    font-size: 25px;
+    top: 40%;
+    bottom: 50%;
 }
 
 html{
