@@ -10,6 +10,16 @@
     border-style: solid;
 }
 
+footer{
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    background-color: darkslateblue;
+    bottom:0;
+    margin-bottom: 0;
+    padding: 10px;
+    padding-top: 15px;
+}
 
 
 

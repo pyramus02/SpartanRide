@@ -12,10 +12,9 @@
 
     padding: 20px;
 
-    margin-left: 30%;
+    margin-left: 60%;
     margin-right: 30%;
 }
-
 
 .floatContainer{
     padding: 20px;
@@ -27,3 +26,28 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.signUpBox{
+    float: right;
+    width: 40%;
+    height: 90%;
+    min-height: 90%;
+    background-color: #bac5f5;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: cornflowerblue;
+}
+
+.infoBox{
+    background-color: #bac5f5;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: cornflowerblue;
+    margin: 10px;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+

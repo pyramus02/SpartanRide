@@ -10,7 +10,7 @@
     <body style="background-color: #bac5f5">
 
         <!--This is the nav bar that goes on top of each page -Aidan -->
-        <nav class="navbar navbar-expand-lg header">
+        <nav class="navbar navbar-expand-lg header shadow">
             <div class="container-fluid">
 
                 <a class="headerTitle" style="color: gold" href="index.html">SpartanRide</a>
@@ -58,57 +58,99 @@
             </div>
         </nav>
 
-        <div>
-            <h1 class="title1">
-                Travel, Socialize, and <br>
-                be Productive with Spartan Ride!
-            </h1>
+        <div class="floatContainer page-container" style="margin-left: 0; padding-left: 0; padding-right: 10px">
+            <!-- Left Body Content -->
+            <div class="floatChild" style="width: 60%;">
+                <h1 class="title1">
+                    Travel, Socialize, and <br>
+                    be Productive with Spartan Ride!
+                </h1>
 
-            <h2 class="text1">
-                Spartan Ride is a carpooling service for students attending UNCG! <br>
-                Allowing students to not only save money, but to build relationships as well.
-                <br>
-                <br>
-                Starting is easy! All you have to do is verify your status as a <br>
-                student at UNCG, make an account, and then you can start driving!
-            </h2>
+                <h2 class="text1">
+                    Spartan Ride is a carpooling service for students attending UNCG! <br>
+                    Allowing students to not only save money, but to build relationships as well.
+                    <br>
+                    <br>
+                    Starting is easy! All you have to do is verify your status as a <br>
+                    student at UNCG, make an account, and then you can start driving!
+                </h2>
 
 
-            <!-- Container for Role Buttons -->
-            <div class="floatContainer">
+                <!-- Container for Role Buttons -->
+                <div class="floatContainer">
 
-                <div class="floatChild">
+                    <div class="floatChild" style="margin-left: ">
 
-                    <p style="margin-left: 65%; font-family: Alexandria,sans-serif; font-size: 20px;
+                        <p style="margin-left: 95%; font-family: Alexandria,sans-serif; font-size: 20px;
                               font-weight: 500">
 
-                        Rider
-                    </p>
+                            Rider
+                        </p>
 
-                    <div class="roleBox">
-                        <img src="assets/images/racing-seat.png" alt="rider" width="128" height="128">
+                        <div class="roleBox">
+                            <img src="assets/images/racing-seat.png" alt="rider" width="128" height="128">
+                        </div>
+                    </div>
+
+                    <div class="floatChild" style="margin-left: 5%;">
+
+                        <p style="margin-left: 95%; font-family: Alexandria,sans-serif; font-size: 20px;
+                              font-weight: 500">
+
+                            Driver
+                        </p>
+                        <div class="roleBox">
+                            <img src="assets/images/car-back.png" alt="driver">
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="floatChild" style="margin-left: 5%;">
 
-                    <p style="margin-left: 65%; font-family: Alexandria,sans-serif; font-size: 20px;
-                              font-weight: 500">
 
-                        Driver
-                    </p>
-                    <div class="roleBox">
-                        <img src="assets/images/car-back.png" alt="driver">
-                    </div>
-
-                </div>
             </div>
 
+            <!-- Right Body Content -->
+            <div class="floatChild signUpBox shadow">
 
+                <div class="text-lg-center signTitle">
+                    Sign Up
+                </div>
+
+                <div class="text1 infoBox">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <br>
+                    <br>
+
+                </div>
+
+            </div>
+
+            <footer>
+                <h1 class="headerTitle">
+                    SpartanRide
+                </h1>
+            </footer>
 
         </div>
 
 
 
     </body>
+
 </html>
