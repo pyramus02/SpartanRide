@@ -1,0 +1,26 @@
+/* text */
+.title1{
+    font-family: Alexandria, sans-serif;
+    font-size: 50px;
+    color: #191a36;
+    padding: 25px;
+    padding-left: 40px;
+    font-weight: 500;
+}
+
+.text1{
+    font-family: Alexandria, sans-serif;
+    font-size: 25px;
+    color: #191a36;
+    padding: 25px;
+    padding-left: 40px;
+    font-weight: 400;
+}
+
+.headerTitle{
+    color: gold;
+    padding-right: 45px;
+    font-size: 30px;
+    font-family: Alexandria, sans-serif;
+    font-weight: 500;
+}

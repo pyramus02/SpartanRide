@@ -1,0 +1,15 @@
+/* Headers */
+.header{
+    background-color: darkslateblue;
+
+    border-left: darkslateblue;
+    border-right: darkslateblue;
+    border-top: darkslateblue;
+    border-bottom: gold;
+    border-bottom-width: thick;
+    border-style: solid;
+}
+
+
+
+

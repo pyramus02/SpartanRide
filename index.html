@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="background-color: #bac5f5" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>SpartanRide</title>
@@ -7,64 +7,108 @@
     <link rel="stylesheet" href="css/master.css">
 </head>
 
-    <body>
+    <body style="background-color: #bac5f5">
 
-    <!--This is the nav bar that goes on top of each page -Aidan -->
-    <div class="header">
+        <!--This is the nav bar that goes on top of each page -Aidan -->
+        <nav class="navbar navbar-expand-lg header">
+            <div class="container-fluid">
 
-        <nav class="headerLeft">
-            <a href="index.html" class="headerTitle">SpartanRide</a>
-            <a href="pages/about_us.html" style="padding-right: 10px">About Us</a>
-            <a href="pages/rider/rider_home.html" class="navText">Ride</a>
-            <a href="pages/driver/driver_home.html" class="navText">Drive</a>
-        </nav>
+                <a class="headerTitle" style="color: gold" href="index.html">SpartanRide</a>
 
-        <nav class="headerRight">
-            <a href="pages/log_in.html" style="padding-right: 20px">Log In</a>
-                <div class="button">
-                <a href="pages/sign_up.html" class="navText" style="color: darkslateblue">Sign Up</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link nav" aria-current="page" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link nav" href="pages/about_us.html">About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link nav" href="pages/rider/rider_home.html">Ride</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link nav" href="pages/driver/driver_home.html">Drive</a>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="btn" style="border-radius: 20px;
+                    background-color: blanchedalmond;margin-right: 10px">
+
+                        Sign In
+
+                    </button>
+
+                    <button type="button" class="btn" style="border-radius: 20px;
+                    background-color: blanchedalmond ;margin-left: 10px">
+
+                        Log In
+
+                    </button>
+
+
+                </div>
             </div>
         </nav>
-    </div>
 
-    <div class="main">
-        <h1 class="title1">
-            Travel, Socialize, and <br>
-            be Productive with Spartan Ride!
-        </h1>
+        <div>
+            <h1 class="title1">
+                Travel, Socialize, and <br>
+                be Productive with Spartan Ride!
+            </h1>
 
-        <h2 class="text1">
-            Spartan Ride is a carpooling service for students attending UNCG! <br>
-            Allowing students to not only save money, but to build relationships as well.
-        </h2>
-
-
-        <!-- Container for Role Buttons -->
-        <div class="floatContainer">
-
+            <h2 class="text1">
+                Spartan Ride is a carpooling service for students attending UNCG! <br>
+                Allowing students to not only save money, but to build relationships as well.
+                <br>
+                <br>
+                Starting is easy! All you have to do is verify your status as a <br>
+                student at UNCG, make an account, and then you can start driving!
+            </h2>
 
 
-            <div class="floatChild">
-                <p> Rider </p>
-                <div class="roleBox">
-                    <img src="assets/images/racing-seat.png" alt="rider" width="128" height="128">
+            <!-- Container for Role Buttons -->
+            <div class="floatContainer">
+
+                <div class="floatChild">
+
+                    <p style="margin-left: 65%; font-family: Alexandria,sans-serif; font-size: 20px;
+                              font-weight: 500">
+
+                        Rider
+                    </p>
+
+                    <div class="roleBox">
+                        <img src="assets/images/racing-seat.png" alt="rider" width="128" height="128">
+                    </div>
+                </div>
+
+                <div class="floatChild" style="margin-left: 5%;">
+
+                    <p style="margin-left: 65%; font-family: Alexandria,sans-serif; font-size: 20px;
+                              font-weight: 500">
+
+                        Driver
+                    </p>
+                    <div class="roleBox">
+                        <img src="assets/images/car-back.png" alt="driver">
+                    </div>
+
                 </div>
             </div>
 
-            <div class="floatChild" style="margin-left: 10%;">
-                <p class="text-center"> Driver </p>
-                <div class="roleBox">
-                    <img src="assets/images/car-back.png" alt="driver">
-                </div>
 
-            </div>
+
         </div>
 
 
 
-    </div>
-
-
-
-</body>
+    </body>
 </html>

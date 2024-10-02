@@ -24,14 +24,10 @@ a:active {
 
 nav{
     color: palegoldenrod;
-}
-.navText{
-    padding-left: 10px;
-    padding-right: 10px;
+    font-family: Alexandria,sans-serif;
 }
 
-.button{
+.button1{
     border-radius: 20px;
-    float: right;
     background-color: blanchedalmond;
 }

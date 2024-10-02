@@ -1,0 +1,29 @@
+/*Containers*/
+
+.roleBox{
+    border-color: #191a36;
+    border-radius: 50px;
+    border-style: solid;
+
+    width: 175px;
+    height: 175px;
+
+    align-content: center;
+
+    padding: 20px;
+
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+
+.floatContainer{
+    padding: 20px;
+    padding-left: 5%;
+}
+
+.floatChild{
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
