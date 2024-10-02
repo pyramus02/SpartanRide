@@ -11,7 +11,7 @@
 }
 
 footer{
-    position: absolute;
+    position: fixed;
     justify-content: center;
     width: 100%;
     background-color: darkslateblue;

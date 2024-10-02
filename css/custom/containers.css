@@ -59,3 +59,17 @@
     width: 100%;
 }
 
+.section2{
+    background-color: aliceblue;
+    border-style: solid;
+    border-color: midnightblue;
+    width: fit-content;
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 5%;
+}
+
+.hr1{
+    height: 70px;
+    background-color: midnightblue;
+}
