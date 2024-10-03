@@ -10,3 +10,9 @@ https://www.pexels.com/photo/photo-of-person-driving-1386649/
 
 <plant>
 https://www.pexels.com/photo/closeup-photo-of-sprout-1002703/
+
+<puppycat>
+https://beeandpuppycat.fandom.com/wiki/PuppyCat
+
+<5stars>
+https://www.vecteezy.com/vector-art/7498656-yellow-five-stars-quality-rating-icons-5-stars-icon-five-star-sign-rating-symbol-vector-illustration

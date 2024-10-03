@@ -27,6 +27,18 @@
     padding-right: 20px;
 }
 
+.floatContainer2{
+    padding: 10px;
+    padding-left: 5%;
+    margin-right: 5%;
+}
+
+.floatChild2{
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .signUpBox{
     float: right;
     width: 40%;
@@ -71,4 +83,27 @@
 
 .imageBG{
     width: 100%;
+}
+
+.imageRound{
+    border-radius: 50%;
+    border-style: solid;
+    margin: 2%;
+}
+
+.reviewBox{
+    background-color: #bac5f5;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: cornflowerblue;
+
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+
+    padding: 10px;
+
+    height: 20%;
+
+    clear: both;
 }
