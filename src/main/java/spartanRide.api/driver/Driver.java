@@ -8,29 +8,29 @@ public class Driver {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int driverId;
+    private int id;
 
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(email = "email", nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(carModel = "carModel", nullable = false)
+    @Column(name = "car_model", nullable = false)
     private String carModel;
 
-    @Column(plateNum = "plateNum", nullable = false)
+    @Column(name = "plate_num", nullable = false)
     private String plateNum;
 
-    @Column(phoneNum = "phoneNum", nullable = true)
+    @Column(name = "phone_num")
     private int phoneNum;
 
-    @Column(status = "status")
+    @Column(name = "status")
     private String status;
 
 
-    public Driver(int driverId, String name, String email, String carModel, String plateNum, int phoneNum, String status) {
-        this.driverId = driverId;
+    public Driver(int id, String name, String email, String carModel, String plateNum, int phoneNum, String status) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.carModel = carModel;
@@ -52,12 +52,12 @@ public class Driver {
 
     }
 
-    public int getDriverId() {
-        return driverId;
+    public int getId() {
+        return id;
     }
 
-    public void setDriverId(int driverId) {
-        this.driverId = driverId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
