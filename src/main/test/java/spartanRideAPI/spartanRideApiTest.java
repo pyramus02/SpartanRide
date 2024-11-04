@@ -1,10 +1,10 @@
-package aq340.IA4;
+package spartanRide.IA4;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Ia4ApplicationTests {
+class SprAPIApplicationTests {
 
 	@Test
 	void contextLoads() {
