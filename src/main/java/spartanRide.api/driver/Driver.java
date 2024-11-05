@@ -28,8 +28,11 @@ public class Driver {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "destination", nullable = false)
+    private String destination;
 
-    public Driver(int id, String name, String email, String carModel, String plateNum, int phoneNum, String status) {
+
+    public Driver(int id, String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -37,15 +40,17 @@ public class Driver {
         this.plateNum = plateNum;
         this.phoneNum = phoneNum;
         this.status = status;
+        this.destination = destination;
     }
 
-    public Driver(String name, String email, String carModel, String plateNum, int phoneNum, String status) {
+    public Driver(String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination) {
         this.name = name;
         this.email = email;
         this.carModel = carModel;
         this.plateNum = plateNum;
         this.phoneNum = phoneNum;
         this.status = status;
+        this.destination = destination;
     }
 
     public Driver(){
@@ -106,6 +111,14 @@ public class Driver {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
 }
