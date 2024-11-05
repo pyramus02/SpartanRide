@@ -24,7 +24,19 @@ public class DriverController {
         return service.getAllDrivers();
     }
 
-    @PostMapping("/signUp")
+
+    /**
+     * Create a new Driver entry.
+     * http://localhost:8080/driver/sign_up --data '{"name": "Aidan",
+     *                                               "email": alquinn2@uncg.edu,
+     *                                               "car_model": Honda Accord 2006,
+     *                                               "plate_num": ZZZ-Z7Y5,
+     *                                               "phone_num": 1231231234}'
+     *
+     * @param driver the new Driver object.
+     * @return the updated list of Drivers.
+     */
+    @PostMapping("/sign_up")
     public List<Driver> signUp(@RequestBody Driver driver) {
         service.signUp(driver);
 
@@ -59,6 +71,12 @@ public class DriverController {
     @PutMapping("/update/{id}")
     public Driver updateProfile(@PathVariable int id, @RequestBody Driver driver) {
         service.updateProfile(id, driver);
+        return service.getDriverById(id);
+    }
+
+    @PutMapping("/set_dest/{id}/{destination}")
+    public Driver setDestination(@PathVariable int id, @PathVariable String destination, @RequestBody Driver driver) {
+        service.setDestination(id, destination, driver);
         return service.getDriverById(id);
     }
 

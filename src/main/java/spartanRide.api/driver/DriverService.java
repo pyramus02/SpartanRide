@@ -80,4 +80,11 @@ public class DriverService {
         driverRepository.save(existing);
     }
 
+    public void setDestination(int id, String destination, Driver driver) {
+        Driver existing = getDriverById(id);
+
+        existing.setDestination(destination);
+        driverRepository.save(existing);
+    }
+
 }

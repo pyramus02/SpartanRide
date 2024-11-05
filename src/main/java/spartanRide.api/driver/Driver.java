@@ -28,7 +28,7 @@ public class Driver {
     @Column(name = "status")
     private String status;
 
-    @Column(name = "destination", nullable = false)
+    @Column(name = "destination")
     private String destination;
 
 
