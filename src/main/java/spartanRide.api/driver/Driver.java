@@ -16,7 +16,7 @@ public class Driver {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "car_model", nullable = false)
+    @Column(name = "car_model")
     private String carModel;
 
     @Column(name = "plate_num", nullable = false)
