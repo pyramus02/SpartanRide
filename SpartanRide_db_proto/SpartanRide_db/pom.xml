@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>SpartanRide</groupId>
-	<artifactId>db</artifactId>
+	<artifactId>SpartanRide_db</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>db</name>
+	<name>SpartanRide_db</name>
 	<description>Database Prototype for SpartanRide</description>
 	<url/>
 	<licenses>

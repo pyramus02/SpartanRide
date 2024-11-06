@@ -4,7 +4,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/pom.xml" />
+        <option value="$PROJECT_DIR$/SpartanRide_db/pom.xml" />
       </list>
     </option>
   </component>
