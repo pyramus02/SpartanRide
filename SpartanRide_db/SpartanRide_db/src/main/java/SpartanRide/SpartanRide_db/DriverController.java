@@ -28,10 +28,11 @@ public class DriverController {
     /**
      * Create a new Driver entry.
      * http://localhost:8080/driver/sign_up --data '{"name": "Aidan",
-                                                  "email": alquinn2@uncg.edu,
-                                                 "car_model": Honda Accord 2006,
-                                                  "plate_num": ZZZ-Z7Y5,
-                                                  "phone_num": 1231231234}'
+     * "email": "alquinn2@uncg.edu",
+     * "car_model": "Honda Accord 2006",
+     * "plateNum": "ZZZ-Z7Y5",
+     * "phone_num":
+     * "1231231234"}'
      *
      * @param driver the new Driver object.
      * @return the updated list of Drivers.
@@ -48,6 +49,14 @@ public class DriverController {
     @PutMapping("/logIn/{id}")
     public Driver logIn(@PathVariable int id, @RequestBody Driver driver) {
         service.logIn(id, driver);
+
+        return service.getDriverById(id);
+    }
+
+
+    @PutMapping("/logOut/{id}")
+    public Driver logOut(@PathVariable int id, @RequestBody Driver driver) {
+        service.logOut(id, driver);
 
         return service.getDriverById(id);
     }
@@ -81,6 +90,8 @@ public class DriverController {
         service.setDestination(id, destination, driver);
         return service.getDriverById(id);
     }
+
+
 
 
 }

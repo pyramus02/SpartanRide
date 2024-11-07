@@ -3,12 +3,11 @@ package SpartanRide.SpartanRide_db;
 
 import jakarta.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "drivers")
 public class Driver {
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,8 +38,8 @@ public class Driver {
     private String accountStatus;
 
 
-    @Column(name = "reviews")
-    private ArrayList<Review> reviews;
+    @Column(name = "riders", nullable = true)
+    private List<Integer> riders;
 
 
 
@@ -53,7 +52,7 @@ public class Driver {
         this.phoneNum = phoneNum;
         this.status = status;
         this.destination = destination;
-        reviews = new ArrayList<Review>();
+
 
     }
 
@@ -63,7 +62,7 @@ public class Driver {
         this.carModel = carModel;
         this.plateNum = plateNum;
         this.phoneNum = phoneNum;
-        reviews = new ArrayList<Review>();
+
     }
 
 
@@ -143,12 +142,19 @@ public class Driver {
         this.destination = destination;
     }
 
-    public void addReview(Review newReview) {
-        this.reviews.add(newReview);
+    public void setRiders(List<Integer> newRiders) {
+
+        this.riders = newRiders;
     }
 
+    public List<Integer> getRiders() {
 
-    public ArrayList<Review> getReviews() {
-        return this.reviews;
+        if (this.riders == null) {
+            this.riders = new ArrayList<Integer>();
+        }
+
+
+        return this.riders;
     }
+
 }

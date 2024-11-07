@@ -1,46 +1,73 @@
 package SpartanRide.SpartanRide_db;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-public class Review {
+import java.io.Serializable;
+
+@Entity
+@Table(name = "review")
+public class Review implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-
-    private Rider author;
-
-
+    @Column(name = "reviewText", nullable = false)
     private String reviewText;
 
 
-    Review(String review) {
-        this.reviewText = review;
+    @Column(name = "authorId", nullable = false)
+    private int authorId;
+
+    @Column(name = "subjectId", nullable = false)
+    private int subjectId;
+
+
+
+    public Review(String reviewText, int authorId, int subjectId) {
+
+        this.subjectId = subjectId;
+        this.authorId = authorId;
+        this.reviewText = reviewText;
     }
+
+    public Review() {}
 
     public int getId() {
         return this.id;
     }
 
-    public String getReview() {
+    public void setId(int newId) {
+        this.id = newId;
+    }
+
+    public String getReviewText() {
         return this.reviewText;
     }
 
-    public void setReview(String newReview) {
+    public void setReviewText(String newReview) {
         this.reviewText = newReview;
     }
 
-    public Rider getAuthor() {
-        return this.author;
+
+    public int getSubjectId() {
+        return this.subjectId;
     }
 
-    public void setAuthor(Rider reviewer) {
-        this.author = reviewer;
+    public void setSubjectId(int subject) {
+        this.subjectId = subject;
     }
 
+
+    public int getAuthorId() {
+        return this.authorId;
+    }
+
+    public void setAuthorId(int author) {
+        this.authorId = author;
+    }
 
 
 }

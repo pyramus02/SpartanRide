@@ -9,9 +9,6 @@ import java.util.ArrayList;
 @Table(name = "rider")
 public class Rider {
 
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -20,16 +17,33 @@ public class Rider {
     private String name;
 
 
-    @Column(name = "accountStatus", nullable = false)
+    @Column(name = "status")
+    private String status;
+
+
+    @Column(name = "accountStatus")
     private String accountStatus;
 
 
     @Column(name = "email", nullable = false)
     private String email;
 
+    @Column(name = "driverId", nullable = true)
+    private int driverId;
+
+    @Column(name = "phone_num")
+    private int phoneNum;
 
     public Rider() {
 
+    }
+
+    public void setDriverId(int drId) {
+        this.driverId = drId;
+    }
+
+    public int getDriverId() {
+        return this.driverId;
     }
 
     public void setId(int newId) {
@@ -64,11 +78,33 @@ public class Rider {
         return this.email;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 
     public void setRider(Rider newRider) {
         this.email = newRider.getEmail();
         this.name = newRider.getName();
-        this.accountStatus = newRider.getAccountStatus();
+        this.phoneNum = newRider.getPhoneNum();
+        this.email = newRider.getEmail();
+
+        if (newRider.getAccountStatus() != null) {
+            this.accountStatus = newRider.getAccountStatus();
+        }
+    }
+
+
+    public int getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(int phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,6 +14,7 @@ public class DriverService {
 
     @Autowired
     private DriverRepository driverRepository;
+    private ReviewRepository reviewRepository;
 
     /**
      * Fetch all Drivers.
@@ -29,10 +31,18 @@ public class DriverService {
 
     public void logIn(int id, Driver driver) {
         Driver existing = getDriverById(id);
-        existing.setEmail("Online");
+        existing.setStatus("Online");
 
         driverRepository.save(driver);
     }
+
+    public void logOut(int id, Driver driver) {
+        Driver existing = getDriverById(id);
+        existing.setStatus("Offline");
+
+        driverRepository.save(driver);
+    }
+
 
     /**
      * Gets a specific Driver by their id.
@@ -80,12 +90,6 @@ public class DriverService {
         driverRepository.save(existing);
     }
 
-    public void reviewDriver(int id, Driver driver, String review) {
-        Driver curr = getDriverById(id);
-        Review newReview = new Review(review);
-        curr.addReview(newReview);
-        driverRepository.save(curr);
-    }
 
     public void setDestination(int id, String destination, Driver driver) {
         Driver existing = getDriverById(id);
@@ -94,22 +98,33 @@ public class DriverService {
         driverRepository.save(existing);
     }
 
+    public void addRider(int driverId, int riderId) {
 
-    public void deleteReview(Driver driver, int reviewId) {
+        Driver existing = getDriverById(driverId);
+        List<Integer> curr =  existing.getRiders();
 
-        Driver curr = getDriverById(driver.getId());
+        curr.add(riderId);
+        existing.setRiders(curr);
 
-        for (int i = 0; i < curr.getReviews().size(); i++) {
+        driverRepository.save(existing);
+    }
 
-            if (curr.getReviews().get(i).getId() == reviewId) {
-                curr.getReviews().remove(i);
-                break;
-            }
+    public void removeRider(int driverId, int riderId) {
 
+        Driver existing = getDriverById(driverId);
+        List<Integer> curr =  existing.getRiders();
 
-        }
+        curr.remove(riderId);
+        existing.setRiders(curr);
+
+        driverRepository.save(existing);
 
     }
+
+
+
+
+
 
 
 
