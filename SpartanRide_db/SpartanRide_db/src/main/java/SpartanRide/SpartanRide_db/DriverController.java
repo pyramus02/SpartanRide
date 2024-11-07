@@ -91,6 +91,14 @@ public class DriverController {
         return service.getDriverById(id);
     }
 
+    @PutMapping("/kick-rider/{driverId}/{riderId")
+    public  Driver kickRider(@PathVariable int driverId, @PathVariable int riderId) {
+
+        service.removeRider(driverId, riderId);
+
+        return service.getDriverById(driverId);
+    }
+
 
 
 
