@@ -114,8 +114,16 @@ public class DriverService {
         Driver existing = getDriverById(driverId);
         List<Integer> curr =  existing.getRiders();
 
-        curr.remove(riderId);
+        for (int i = 0; i < curr.size(); i++) {
+            if (curr.get(i) == riderId) {
+                curr.remove(i);
+                break;
+            }
+        }
+
         existing.setRiders(curr);
+
+
 
         driverRepository.save(existing);
 

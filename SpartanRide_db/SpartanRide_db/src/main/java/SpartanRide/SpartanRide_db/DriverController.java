@@ -13,6 +13,9 @@ public class DriverController {
     @Autowired
     private DriverService service;
 
+    @Autowired
+    private RiderService riderService;
+
     /**
      * Get a list of all Drivers in the database.
      * http://localhost:8080/driver/all
@@ -91,11 +94,11 @@ public class DriverController {
         return service.getDriverById(id);
     }
 
-    @PutMapping("/kick-rider/{driverId}/{riderId")
+    @PutMapping("/kick-rider/{driverId}/{riderId}")
     public  Driver kickRider(@PathVariable int driverId, @PathVariable int riderId) {
 
         service.removeRider(driverId, riderId);
-
+        riderService.unsubscribe(driverId, riderId);
         return service.getDriverById(driverId);
     }
 
