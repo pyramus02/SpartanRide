@@ -75,6 +75,22 @@ public class AdminController {
         return adminService.getAdminById(id);
     }
 
+    @GetMapping("/stats")
+    public Stats showStats() {
+
+        int driverTotal = adminService.getDriverTotal();
+        int riderTotal = adminService.getRiderTotal();
+        int driverOnline = adminService.getDriverOnline();
+        int riderOnline = adminService.getRiderOnline();
+
+
+        Stats currStats = new Stats(driverTotal, riderTotal, driverOnline, riderOnline);
+
+        return currStats;
+
+
+    }
+
 
 
 

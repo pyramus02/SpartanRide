@@ -55,11 +55,6 @@ public class RiderController {
 
     }
 
-
-
-
-
-
     @PutMapping("/update/{riderId}")
     public Rider updateRider(@PathVariable int riderId, @RequestBody Rider rider) {
         riderService.updateRider(riderId, rider);
@@ -67,16 +62,16 @@ public class RiderController {
     }
 
     @PutMapping("/logIn/{id}")
-    public Rider logIn(@PathVariable int id, @RequestBody Rider rider) {
-        riderService.logIn(id, rider);
+    public Rider logIn(@PathVariable int id) {
+        riderService.logIn(id);
 
         return riderService.getRiderById(id);
     }
 
 
     @PutMapping("/logOut/{id}")
-    public Rider logOut(@PathVariable int id, @RequestBody Rider rider) {
-        riderService.logOut(id, rider);
+    public Rider logOut(@PathVariable int id) {
+        riderService.logOut(id);
 
         return riderService.getRiderById(id);
     }

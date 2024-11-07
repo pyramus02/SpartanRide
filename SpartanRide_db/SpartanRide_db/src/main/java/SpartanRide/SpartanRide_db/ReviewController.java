@@ -13,6 +13,11 @@ public class ReviewController {
 
     @Autowired ReviewService reviewService;
 
+
+    /**
+     *
+     * {"reviewText": An interesting review}
+     */
     @PostMapping("/new")
     public Review newReview( @RequestBody Review review) {
         reviewService.addReview(review);

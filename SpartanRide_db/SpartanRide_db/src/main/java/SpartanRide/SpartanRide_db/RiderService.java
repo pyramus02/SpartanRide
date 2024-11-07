@@ -33,18 +33,28 @@ public class RiderService {
         riderRepository.save(curr);
     }
 
-    public void logIn(int id, Rider rider) {
+    public void logIn(int id) {
         Rider existing = getRiderById(id);
-        existing.setStatus("Online");
 
-        riderRepository.save(rider);
+        if (existing != null) {
+
+            existing.setStatus("Online");
+
+        }
+
+        riderRepository.save(existing);
     }
 
-    public void logOut(int id, Rider rider) {
+    public void logOut(int id) {
         Rider existing = getRiderById(id);
-        existing.setStatus("Offline");
 
-        riderRepository.save(rider);
+        if (existing != null) {
+
+            existing.setStatus("Offline");
+
+        }
+
+        riderRepository.save(existing);
     }
 
 

@@ -12,7 +12,12 @@ import java.util.List;
 public class AdminService {
 
     @Autowired
-    private AdminRepository driverRepository;
+    private DriverRepository driverRepository;
+
+
+    @Autowired
+    private RiderRepository riderRepository;
+
 
     @Autowired
     public AdminRepository adminRepository;
@@ -46,6 +51,27 @@ public class AdminService {
         existing.setStatus("Offline");
         adminRepository.save(admin);
     }
+
+    public int getRiderTotal() {
+        return riderRepository.findAll().size();
+    }
+
+    public int getDriverTotal() {
+        return driverRepository.findAll().size();
+    }
+
+    public int getRiderOnline() {
+        return riderRepository.getOnline().size();
+    }
+
+    public int getDriverOnline() {
+        return driverRepository.getOnline().size();
+    }
+
+
+
+
+
 
 
 }
