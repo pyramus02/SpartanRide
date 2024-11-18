@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-lg header shadow">
             <div class="container-fluid">
 
-                <a class="headerTitle" style="color: gold" href="../../index.html">SpartanRide</a>
+                <a class="headerTitle" style="color: gold" href="../../../../../index.html">SpartanRide</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
                         </li>
 
 			 <li class="nav-item">
-                            <a class="nav-link nav" href="../admin/admin_home.html">Admin</a>
+                            <a class="nav-link nav" href="admin_home.html">Admin</a>
                         </li>
                     </ul>
 
@@ -60,7 +60,19 @@
         <div class="container mt-5" style="color: orange">
             <div class="d-flex flex-wrap align-items-center mb-4">
 
-                <h2 class="mb-0 me-4">Query Driver:</h2>
+                <h2 class="mb-0 me-4">User Access Actions:</h2>
+
+
+                <div class="form-check form-switch me-3">
+                    <input class="form-check-input" type="checkbox" id="banSwitch">
+                    <label class="form-check-label" for="banSwitch">Ban</label>
+                </div>
+
+
+                <div class="form-check form-switch me-3">
+                    <input class="form-check-input" type="checkbox" id="suspendSwitch">
+                    <label class="form-check-label" for="suspendSwitch">Suspend</label>
+                </div>
 
 
                 <div class="d-flex align-items-center me-3">
@@ -68,23 +80,34 @@
                     <input type="text" class="form-control rounded-pill" id="usernameInput" placeholder="Enter username">
                 </div>
 
-			<button
-			type="button" 
-                	class="btn btn-success btn-md w-30 rounded-pill" 
-                	onclick="window.location.href='./admin_rides_1.html'"
 
-			>
-			GET
-
-			</button>
                 
             </div>
-
-
 
         </div>
 
 
+
+
+        <div class="container mt-5" style="color: orange">
+            <div class="d-flex flex-wrap align-items-center mb-4">
+
+                <h2 class="mb-0 me-4">Reason:</h2>
+
+
+                <textarea class="form-control rounded" id="reasonTextarea" rows="6" placeholder="Enter reason here"></textarea>
+            </div>
+
+        </div>
+
+
+        <div class="container mt-5" >
+            <button type="button" class="btn btn-danger rounded-pill" >Submit</button>
+        </div>
+
+
+
+        
             <footer class="mt-auto py-3">
                 <h1 class="headerTitle">
                     SpartanRide
