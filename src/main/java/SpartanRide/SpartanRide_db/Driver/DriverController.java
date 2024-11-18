@@ -1,12 +1,13 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Driver;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/driver")
 public class DriverController {
 
@@ -23,8 +24,11 @@ public class DriverController {
      * @return a list of Driver objects.
      */
     @GetMapping("/all")
-    public List<Driver> getAllDrivers() {
-        return service.getAllDrivers();
+    public String getAllDrivers(Model model) {
+        model.addAttribute("drivers", service.getAllDrivers());
+        model.addAttribute("title", "All Drivers");
+
+        return "driver-list";
     }
 
 
@@ -41,12 +45,11 @@ public class DriverController {
      * @return the updated list of Drivers.
      */
     @PostMapping("/sign_up")
-    public List<Driver> signUp(@RequestBody Driver driver) {
+    public String signUp(Driver driver) {
 
-        System.out.println(driver.getPlateNum());
         service.signUp(driver);
 
-        return service.getAllDrivers();
+        return "redirect:/driver/all";
     }
 
     @PutMapping("/logIn/{id}")

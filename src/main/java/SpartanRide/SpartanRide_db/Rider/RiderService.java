@@ -1,4 +1,4 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Rider;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

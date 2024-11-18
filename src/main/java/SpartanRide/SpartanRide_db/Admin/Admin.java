@@ -1,10 +1,7 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Admin;
 
 
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "admin")

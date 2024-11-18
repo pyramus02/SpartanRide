@@ -1,5 +1,7 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Rider;
 
+import SpartanRide.SpartanRide_db.Driver.DriverService;
+import SpartanRide.SpartanRide_db.Review.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

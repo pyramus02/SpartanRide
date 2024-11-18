@@ -1,4 +1,4 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Review;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

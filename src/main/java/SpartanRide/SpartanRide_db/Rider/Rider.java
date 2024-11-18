@@ -1,9 +1,7 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Rider;
 
 
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
 
 @Entity
 @Table(name = "rider")

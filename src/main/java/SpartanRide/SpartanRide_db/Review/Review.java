@@ -1,4 +1,4 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Review;
 
 import jakarta.persistence.*;
 

@@ -1,4 +1,4 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Driver;
 
 
 import jakarta.persistence.*;

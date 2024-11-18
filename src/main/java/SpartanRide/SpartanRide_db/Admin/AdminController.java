@@ -1,12 +1,14 @@
-package SpartanRide.SpartanRide_db;
+package SpartanRide.SpartanRide_db.Admin;
 
+import SpartanRide.SpartanRide_db.*;
+import SpartanRide.SpartanRide_db.Driver.Driver;
+import SpartanRide.SpartanRide_db.Driver.DriverService;
+import SpartanRide.SpartanRide_db.Rider.Rider;
+import SpartanRide.SpartanRide_db.Rider.RiderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
-
 
 
 @RestController
