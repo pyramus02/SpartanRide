@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html style="background-color: #bac5f5" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SpartanRide - Driver Profile</title>
+
+    <link rel="stylesheet" href="../../css/master.css">
+</head>
+
+    <body style="background-color: #bac5f5">
+
+        <div class="page-container">
+            <!--This is the nav bar that goes on top of each page -Aidan -->
+            <nav class="navbar navbar-expand-lg header shadow">
+                <div class="container-fluid">
+
+                    <a class="headerTitle" style="color: gold" href="../../../../../index.html">SpartanRide</a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link nav" href="../about_us.html">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link nav" href="../rider/rider_home.html">Ride</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link nav" href="../driver/driver_home.html">Drive</a>
+                            </li>
+
+						 <li class="nav-item">
+                            <a class="nav-link nav" href="../admin/admin_home.html">Admin</a>
+                        </li>
+                        </ul>
+
+                        <button type="button" class="btn" style="border-radius: 20px;
+                        background-color: blanchedalmond;margin-right: 10px">
+
+                            Sign In
+
+                        </button>
+
+                        <button type="button" class="btn" style="border-radius: 20px;
+                        background-color: blanchedalmond ;margin-left: 10px">
+
+                            Log In
+
+                        </button>
+
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class="floatContainer2">
+
+                <div class="floatChild2 shadow-lg" style="border: solid; border-color: cornflowerblue;
+                                                border-radius: 15px; width: 50%;">
+                    <img src="../../assets/images/Puppycat.png" alt="puppycat"
+                         class="imageRound" style="float: left">
+
+                    <h2 class="title1"
+                        data-th-text="${driver.name}">
+
+                    </h2>
+
+                    <h3 class="text1" style="padding-top: 0" data-th-text="${driver.plate_num}">
+                        Honda Accord - V86-9JXL
+                    </h3>
+
+                    <img src="../../assets/images/5stars.png" alt="5stars">
+
+                </div>
+
+                <div class="floatChild2" style=" float: right; margin-top: 3%">
+                    <h1>
+                        Destination: UNCG
+                    </h1>
+                    <br>
+                    <br>
+                    <h1>
+                        Seats: 0/4
+                    </h1>
+                </div>
+
+
+            </div>
+
+            <div class="reviewBox">
+                <h2>
+                    Reviews:
+                </h2>
+                <h6>
+                    John said: Awesome driver and super friendly! &starf;&starf;&starf;&starf;&starf;
+                </h6>
+                <h6>
+                    Jane said: Nice, but his car wasn't clean. &starf;&starf;&starf;
+                </h6>
+                <h6>
+                    Jeff said: Drove really safe, but didn't talk much. &starf;&starf;&starf;&starf;
+                </h6>
+                <h6>
+                    John2 said: Super nice. &starf;&starf;&starf;&starf;&starf;
+                </h6>
+            </div>
+
+            <footer>
+                <h1 class="headerTitle">
+                    SpartanRide
+                </h1>
+
+            </footer>
+        </div>
+    </body>
+
+</html>
