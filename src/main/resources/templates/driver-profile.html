@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html style="background-color: #bac5f5" lang="en">
+<html style="background-color: #bac5f5" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>SpartanRide - Driver Profile</title>
 
-    <link rel="stylesheet" href="../../css/master.css">
+    <link rel="stylesheet" href="../css/master.css">
 </head>
 
     <body style="background-color: #bac5f5">
@@ -14,7 +16,7 @@
             <nav class="navbar navbar-expand-lg header shadow">
                 <div class="container-fluid">
 
-                    <a class="headerTitle" style="color: gold" href="../../../../../index.html">SpartanRide</a>
+                    <a class="headerTitle" style="color: gold" href="../../../../index.html">SpartanRide</a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -24,19 +26,19 @@
                         <ul class="navbar-nav me-auto">
 
                             <li class="nav-item">
-                                <a class="nav-link nav" href="../about_us.html">About Us</a>
+                                <a class="nav-link nav" href="about_us.html">About Us</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link nav" href="../rider/rider_home.html">Ride</a>
+                                <a class="nav-link nav" href="rider_home.html">Ride</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link nav" href="../driver/driver_home.html">Drive</a>
+                                <a class="nav-link nav" href="driver_home.html">Drive</a>
                             </li>
 
 						 <li class="nav-item">
-                            <a class="nav-link nav" href="../admin/admin_home.html">Admin</a>
+                            <a class="nav-link nav" href="admin_home.html">Admin</a>
                         </li>
                         </ul>
 
@@ -63,18 +65,21 @@
 
                 <div class="floatChild2 shadow-lg" style="border: solid; border-color: cornflowerblue;
                                                 border-radius: 15px; width: 50%;">
-                    <img src="../../assets/images/Puppycat.png" alt="puppycat"
+                    <img src="../assets/images/Puppycat.png" alt="puppycat"
                          class="imageRound" style="float: left">
 
-                    <h2 class="title1">
-                        John Doe
+                    <h2 class="title1"
+                        data-th-text="${driver.name}">
+
                     </h2>
 
-                    <h3 class="text1" style="padding-top: 0">
-                        Honda Accord - V86-9JXL
+
+
+                    <h3 class="text1" style="padding-top: 0" data-th-text="${driver.plate_num}">
+                        
                     </h3>
 
-                    <img src="../../assets/images/5stars.png" alt="5stars">
+                    <img src="../assets/images/5stars.png" alt="5stars">
 
                 </div>
 

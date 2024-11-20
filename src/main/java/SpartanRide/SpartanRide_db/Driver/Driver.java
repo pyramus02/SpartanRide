@@ -34,12 +34,8 @@ public class Driver {
     @Column(name = "destination")
     private String destination;
 
-    @Column(name = "accountStatus")
+    @Column(name = "account_status")
     private String accountStatus;
-
-
-    @Column(name = "riders", nullable = true)
-    private List<Integer> riders;
 
 
 
@@ -52,8 +48,7 @@ public class Driver {
         this.phoneNum = phoneNum;
         this.status = status;
         this.destination = destination;
-
-
+        this.accountStatus = accountStatus;
     }
 
     public Driver(String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination) {
@@ -62,7 +57,9 @@ public class Driver {
         this.carModel = carModel;
         this.plateNum = plateNum;
         this.phoneNum = phoneNum;
-
+        this.status = status;
+        this.destination = destination;
+        this.accountStatus = accountStatus;
     }
 
 
@@ -75,7 +72,7 @@ public class Driver {
     }
 
     public void setAccountStatus(String newStatus){
-        this.accountStatus = newStatus;
+        this.accountStatus = accountStatus;
     }
 
     public int getId() {
@@ -141,20 +138,6 @@ public class Driver {
     public void setDestination(String destination) {
         this.destination = destination;
     }
-
-    public void setRiders(List<Integer> newRiders) {
-
-        this.riders = newRiders;
-    }
-
-    public List<Integer> getRiders() {
-
-        if (this.riders == null) {
-            this.riders = new ArrayList<Integer>();
-        }
-
-
-        return this.riders;
-    }
+    
 
 }

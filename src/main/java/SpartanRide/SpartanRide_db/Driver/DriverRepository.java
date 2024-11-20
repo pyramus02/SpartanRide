@@ -9,8 +9,5 @@ import java.util.List;
 @Repository
 public interface DriverRepository extends JpaRepository<Driver, Integer> {
 
-    @Query(value = "SELECT * FROM drivers WHERE status = 'Online'", nativeQuery = true)
-    List<Driver> getOnline();
-
 
 }
