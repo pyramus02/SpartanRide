@@ -22,7 +22,7 @@ public class Driver {
     @Column(name = "car_model")
     private String carModel;
 
-    @Column(name = "plate_num", nullable = false)
+    @Column(name = "plate_num")
     private String plateNum;
 
     @Column(name = "phone_num")
@@ -138,6 +138,6 @@ public class Driver {
     public void setDestination(String destination) {
         this.destination = destination;
     }
-    
+
 
 }
