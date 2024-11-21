@@ -54,4 +54,9 @@ public class DriverController {
     }
 
 
+    @GetMapping("/driverProfile")
+    public String driverProfileRedirect() {
+        return "index";
+    }
+
 }

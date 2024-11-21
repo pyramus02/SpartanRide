@@ -18,52 +18,52 @@
     <div class="page-container">
         <!--This is the nav bar that goes on top of each page -Aidan -->
         <nav class="navbar navbar-expand-lg header shadow">
-        <div class="container-fluid">
+            <div class="container-fluid">
 
-            <a class="headerTitle" style="color: gold" href="index.html">SpartanRide</a>
+                <a class="headerTitle" style="color: gold" href="/driver/sign-up-page">SpartanRide</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link nav" href="about_us.html">About Us</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav" href="/templates/about_us.html">About Us</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link nav" href="rider_home.html">Ride</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav" href="rider_home.html">Ride</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link nav" href="driver/driver_home.html">Drive</a>
-                    </li>
+                        <li class="nav-item" th:each="driver : ${driver}">
+                            <a class="nav-link nav" th:href="@{/driver/driverProfile/{id}(id = ${driver.id})}">Drive</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link nav" href="admin_home.html">Admin</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link nav" href="admin_home.html">Admin</a>
+                        </li>
+                    </ul>
 
-                <button type="button" class="btn" style="border-radius: 20px;
+                    <button type="button" class="btn" style="border-radius: 20px;
                         background-color: blanchedalmond;margin-right: 10px">
 
-                    Sign In
+                        <a href="/driver/sign-up-page">Sign Up</a>
 
-                </button>
+                    </button>
 
-                <button type="button" class="btn" style="border-radius: 20px;
+                    <button type="button" class="btn" style="border-radius: 20px;
                         background-color: blanchedalmond ;margin-left: 10px">
 
-                    Log In
+                        Log In
 
-                </button>
+                    </button>
 
 
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
         <div class="container">
 
@@ -72,7 +72,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Vehicle Registration</h5>
-                            <p class="card-text"></p>
+                            <p class="card-text"> Please enter your Car's Model and Plate Number.</p>
                         </div>
                     </div>
                     <div class="card" style="padding: 10px; margin: 10px;">
