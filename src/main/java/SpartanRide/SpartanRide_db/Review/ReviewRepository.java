@@ -9,8 +9,13 @@ import java.util.List;
 public interface ReviewRepository extends JpaRepository<Review, Integer> {
 
     @Query(value = "SELECT * FROM review WHERE subject_id = ?1", nativeQuery = true)
-    List<Review> getReviewsbySub(int subjectId);
+    List<Review> getReviewsBySub(int subjectId);
 
     @Query(value = "SELECT * FROM review WHERE author_id = ?1", nativeQuery = true)
-    List<Review> getReviewsbyAuth(int authorId);
+    List<Review> getReviewsByAuth(int authorId);
+
+    @Query(value = "SELECT * FROM review WHERE subject_id = ?1  AND author_id = ?2", nativeQuery = true)
+    Review getReviewOfSubByAuth(int subjectId, int authorId);
+
+
 }

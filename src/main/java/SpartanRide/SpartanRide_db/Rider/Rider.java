@@ -9,9 +9,9 @@ public class Rider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
 
@@ -23,14 +23,14 @@ public class Rider {
     private String accountStatus;
 
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "driverId", nullable = true)
-    private int driverId;
+    @Column(name = "driverId")
+    private Integer driverId;
 
     @Column(name = "phone_num")
-    private int phoneNum;
+    private Integer phoneNum;
 
     public Rider() {
 

@@ -4,11 +4,12 @@ import SpartanRide.SpartanRide_db.Driver.DriverService;
 import SpartanRide.SpartanRide_db.Review.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
 
-@RestController
+@Controller
 @RequestMapping("/rider")
 public class RiderController {
 
@@ -19,6 +20,8 @@ public class RiderController {
     public DriverService driverService;
     @Autowired
     public ReviewService reviewService;
+
+    @Autowired RiderRepository riderRepository;
 
     @GetMapping("/all")
     public List<Rider> getAllRiders() {
@@ -35,9 +38,14 @@ public class RiderController {
      */
 
     @PostMapping("/new")
-    public @ResponseBody List<Rider> addNewRider(@RequestBody Rider rider) {
+    public String addNewRider(Rider rider) {
+
         riderService.addNewRider(rider);
-        return riderService.getAllRiders();
+        return "redirect:/rider/riderHome";
+
+
+
+
     }
 
     @PostMapping("/subscribe/{driverId}/{riderId}")
@@ -63,19 +71,47 @@ public class RiderController {
         return riderService.getRiderById(riderId);
     }
 
-    @PutMapping("/logIn/{id}")
-    public Rider logIn(@PathVariable int id) {
+    @PostMapping("/logIn/{id}")
+    public String logIn(@PathVariable int id) {
         riderService.logIn(id);
 
-        return riderService.getRiderById(id);
+        return "redirect:/rider/riderHome";
+    }
+
+    @PostMapping("/login")
+    public String login(int riderId) {
+
+        riderService.logIn(riderId);
+
+        if (riderService.getRiderById(riderId) != null) {
+            return "redirect:/rider/riderHome";
+        }
+
+        return "redirect:/rider/login-page";
     }
 
 
     @PutMapping("/logOut/{id}")
     public Rider logOut(@PathVariable int id) {
         riderService.logOut(id);
-
         return riderService.getRiderById(id);
+    }
+
+    @GetMapping("/login-page")
+    public String loginPage() {
+        return "log_in";
+    }
+
+
+    @GetMapping("/signup-page")
+    public String signupPage() {
+        return "sign_up";
+    }
+
+
+    @GetMapping("/riderHome")
+    public String riderHome() {
+        return "rider_home";
     }
 
 }

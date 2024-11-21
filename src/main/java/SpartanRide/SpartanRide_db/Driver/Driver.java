@@ -43,6 +43,8 @@ public class Driver {
 
 
 
+
+
     public Driver(int id, String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination, String accountStatus) {
         this.id = id;
         this.name = name;

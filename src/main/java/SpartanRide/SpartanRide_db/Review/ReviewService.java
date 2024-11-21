@@ -17,20 +17,23 @@ public class ReviewService {
         reviewRepository.save(newRev);
         return newRev;
     }
-
-
     public List<Review> getAllReviews() {
         return reviewRepository.findAll();
     }
 
-
-    public List<Review> getReviewsbyAuth(int searchId) {
-        return reviewRepository.getReviewsbyAuth(searchId);
+    public List<Review> getReviewsByAuth(int searchId) {
+        return reviewRepository.getReviewsByAuth(searchId);
     }
 
 
-    public List<Review> getReviewsbySub(int searchId) {
-        return reviewRepository.getReviewsbySub(searchId);
+    public List<Review> getReviewsBySub(int searchId) {
+        return reviewRepository.getReviewsBySub(searchId);
+    }
+
+    public Review getReviewOfSubByAuth(int subId, int authorId) {
+
+        return reviewRepository.getReviewOfSubByAuth(subId, authorId);
+
     }
 
     public void deleteReviewById(int reviewId) {

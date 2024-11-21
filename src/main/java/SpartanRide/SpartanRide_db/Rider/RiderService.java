@@ -1,6 +1,7 @@
 package SpartanRide.SpartanRide_db.Rider;
 
 
+import SpartanRide.SpartanRide_db.Driver.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,13 @@ public class RiderService {
     }
 
     public  void addNewRider(Rider rider) {
+
+
+
         riderRepository.save(rider);
+
+        rider.setAccountStatus("Active");
+        rider.setStatus("Online");
     }
 
     public Rider getRiderById(int id) {
@@ -39,10 +46,11 @@ public class RiderService {
         if (existing != null) {
 
             existing.setStatus("Online");
+            riderRepository.save(existing);
 
         }
 
-        riderRepository.save(existing);
+
     }
 
     public void logOut(int id) {
@@ -51,10 +59,11 @@ public class RiderService {
         if (existing != null) {
 
             existing.setStatus("Offline");
+            riderRepository.save(existing);
 
         }
 
-        riderRepository.save(existing);
+
     }
 
 
@@ -75,6 +84,28 @@ public class RiderService {
 
         riderRepository.save(curr);
         return getRiderById(riderId);
+    }
+
+    public void banRider(int id) {
+
+        Rider existing = getRiderById(id);
+
+        if (existing != null) {
+            existing.setAccountStatus("Banned");
+            riderRepository.save(existing);
+        }
+    }
+
+    public void unbanRider(int id) {
+
+
+
+        Rider existing = getRiderById(id);
+
+        if (existing != null) {
+            existing.setAccountStatus("Active");
+            riderRepository.save(existing);
+        }
     }
 
 

@@ -120,11 +120,33 @@ public class DriverService {
         }
 
         existing.setRiders(curr);
-
-
-
         driverRepository.save(existing);
+    }
 
+    public void banDriver(int id) {
+
+
+        Driver existing = getDriverById(id);
+
+
+        if (existing != null) {
+
+            existing.setAccountStatus("Banned");
+            driverRepository.save(existing);
+        }
+    }
+
+    public void unbanDriver(int id) {
+
+
+        Driver existing = getDriverById(id);
+
+
+        if (existing != null) {
+
+            existing.setAccountStatus("Active");
+            driverRepository.save(existing);
+        }
     }
 
 

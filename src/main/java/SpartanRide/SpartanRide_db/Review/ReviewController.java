@@ -28,33 +28,20 @@ public class ReviewController {
     }
 
     @GetMapping("/driver/{driverId}")
-    public List<Review> getReviewsbyDriver(@PathVariable int driverId) {
-        return reviewService.getReviewsbySub(driverId);
+    public List<Review> getReviewsByDriver(@PathVariable int driverId) {
+        return reviewService.getReviewsBySub(driverId);
     }
 
     @GetMapping("/rider/{riderId}")
-    public List<Review> getReviewsbyRider(@PathVariable int riderId) {
-        return reviewService.getReviewsbyAuth(riderId);
+    public List<Review> getReviewsByRider(@PathVariable int riderId) {
+        return reviewService.getReviewsByAuth(riderId);
     }
 
     @DeleteMapping("/delete/{reviewId}")
-    public List<Review> deleteAnimalById(@PathVariable int reviewId) {
+    public List<Review> deleteReviewById(@PathVariable int reviewId) {
 
         reviewService.deleteReviewById(reviewId);
         return reviewService.getAllReviews();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
