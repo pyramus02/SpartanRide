@@ -19,6 +19,7 @@ public class DriverController {
     public String carRegistration(@PathVariable int id, Model model) {
         model.addAttribute("driver", service.getDriverById(id));
 
+        System.out.println(id);
         return "car-reg";
     }
 
@@ -26,13 +27,14 @@ public class DriverController {
     public String carRegistration(Driver driver) {
         service.carRegistration(driver.getId(), driver);
 
+        System.out.println(driver.getId());
+
         return "redirect:/driver/driverProfile/" + driver.getId();
     }
 
     @GetMapping("/driverProfile/{id}")
     public String driverProfile(@PathVariable int id, Model model) {
         model.addAttribute("driver", service.getDriverById(id));
-
 
         return "driver-profile";
     }
