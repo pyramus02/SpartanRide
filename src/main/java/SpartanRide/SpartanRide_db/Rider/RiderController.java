@@ -23,6 +23,7 @@ public class RiderController {
 
     @Autowired RiderRepository riderRepository;
 
+
     @GetMapping("/all")
     public List<Rider> getAllRiders() {
         return riderService.getAllRiders();
