@@ -36,4 +36,8 @@ public class DriverService {
     }
 
 
+    public void signUp(Driver driver) {
+        driverRepository.save(driver);
+    }
+
 }

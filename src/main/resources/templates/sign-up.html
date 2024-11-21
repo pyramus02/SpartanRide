@@ -16,9 +16,9 @@
 
 <body style="background-color: #bac5f5">
 
-    <div class="page-container">
-        <!--This is the nav bar that goes on top of each page -Aidan -->
-        <nav class="navbar navbar-expand-lg header shadow">
+<div class="page-container">
+    <!--This is the nav bar that goes on top of each page -Aidan -->
+    <nav class="navbar navbar-expand-lg header shadow">
         <div class="container-fluid">
 
             <a class="headerTitle" style="color: gold" href="index.html">SpartanRide</a>
@@ -66,34 +66,24 @@
         </div>
     </nav>
 
-        <div class="container">
+    <div class="container">
 
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Vehicle Registration</h5>
-                            <p class="card-text"></p>
-                        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vehicle Registration</h5>
+                        <p class="card-text"></p>
                     </div>
-                    <div class="card" style="padding: 10px; margin: 10px;">
-
-                        <form action="/driver/carReg" method="post" style="display: flex;">
-                            <input type="text" id="carModel" name="carModel" data-th-value="${driver.carModel}" placeholder="Car Model" required/>
-                            <input type="text" id="plateNum" name="plateNum" data-th-value="${driver.plateNum}" placeholder="Plate Number" required/>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </form>
-
-
-                   </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
 
 
 
-    </div>>
+</div>>
 </body>
 
 
