@@ -1,0 +1,13 @@
+@import "custom/headers.css";
+@import "custom/links.css";
+@import "custom/fonts.css";
+@import "custom/text.css";
+@import "custom/containers.css";
+
+@import "bootstrap/bootstrap.css";
+
+/*Site Background Color*/
+html{
+    background-color: #bac5f5;
+    z-index: -1;
+}

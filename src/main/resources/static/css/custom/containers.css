@@ -1,0 +1,109 @@
+/*Containers*/
+
+.roleBox{
+    border-color: #191a36;
+    border-radius: 50px;
+    border-style: solid;
+
+    width: 175px;
+    height: 175px;
+
+    align-content: center;
+
+    padding: 20px;
+
+    margin-left: 60%;
+    margin-right: 30%;
+}
+
+.floatContainer{
+    padding: 20px;
+    padding-left: 5%;
+}
+
+.floatChild{
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.floatContainer2{
+    padding: 10px;
+    padding-left: 5%;
+    margin-right: 5%;
+}
+
+.floatChild2{
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.signUpBox{
+    float: right;
+    width: 40%;
+    height: 90%;
+    min-height: 90%;
+    background-color: #bac5f5;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: cornflowerblue;
+}
+
+.infoBox{
+    background-color: #bac5f5;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: cornflowerblue;
+    margin: 10px;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.section1{
+    background-color: midnightblue;
+    border-style: solid;
+    border-color: midnightblue;
+    border-bottom: goldenrod;
+    width: 100%;
+}
+
+.section2{
+    background-color: aliceblue;
+    border-style: solid;
+    border-color: midnightblue;
+    width: fit-content;
+    padding: 10px;
+    margin-left: 2.5%;
+    margin-top: 5%;
+}
+
+.imageBG{
+    width: 100%;
+}
+
+.imageRound{
+    border-radius: 50%;
+    border-style: solid;
+    margin: 2%;
+}
+
+.reviewBox{
+    background-color: #bac5f5;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: cornflowerblue;
+
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+
+    padding: 10px;
+
+    height: 20%;
+
+    clear: both;
+}
