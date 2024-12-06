@@ -50,13 +50,13 @@ public class DriverController {
 
     @GetMapping("/sign-up-page")
     public String signUpRedirect() {
-        return "index";
+        return "home";
     }
 
 
     @GetMapping("/driverProfile")
     public String driverProfileRedirect() {
-        return "index";
+        return "home";
     }
 
 }
