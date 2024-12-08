@@ -45,6 +45,12 @@ public class DriverController {
         return "redirect:/driver/driverProfile/" + driver.getId();
     }
 
+    @PostMapping("/logIn")
+    public String logIn(Driver driver) {
+        service.logIn(driver);
+        return "redirect:/driver/driverProfile/" + driver.getId();
+    }
+
 
 //    Page Redirects
 
