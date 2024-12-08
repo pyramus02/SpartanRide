@@ -41,7 +41,12 @@ public class DriverService {
     }
 
     public void logIn(Driver driver) {
-        driverRepository.save(driver);
+        Driver existing = getDriverById(driver.getId());
+
+        String tempEmail = existing.getEmail();
+        String tempPass = existing.getPassword();
+
+        if
     }
 
 }

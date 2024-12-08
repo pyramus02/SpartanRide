@@ -37,9 +37,15 @@ public class Driver {
     @Column(name = "account_status")
     private String accountStatus;
 
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "role")
+    private String role;
 
 
-    public Driver(int id, String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination, String accountStatus) {
+
+    public Driver(int id, String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination, String accountStatus, String password, String role) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -49,9 +55,11 @@ public class Driver {
         this.status = status;
         this.destination = destination;
         this.accountStatus = accountStatus;
+        this.password = password;
+        this.role = role;
     }
 
-    public Driver(String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination) {
+    public Driver(String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination, String accountStatus, String password, String role) {
         this.name = name;
         this.email = email;
         this.carModel = carModel;
@@ -60,6 +68,8 @@ public class Driver {
         this.status = status;
         this.destination = destination;
         this.accountStatus = accountStatus;
+        this.password = password;
+        this.role = role;
     }
 
 
@@ -139,5 +149,17 @@ public class Driver {
         this.destination = destination;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public String getPassword() {
+        return password;
+    }
 
+    public void setRole(String role) {
+        this.role = role;
+    }
+    public String getRole() {
+        return role;
+    }
 }
