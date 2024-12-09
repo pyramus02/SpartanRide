@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html style="background-color: #bac5f5" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:form="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>SpartanRide - Driver Log In</title>
+
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/master.css"
+          th:href="@{/css/master.css}" />
+
+</head>
+
+<body style="background-color: #bac5f5">
+
+<div class="page-container">
+    <!--This is the nav bar that goes on top of each page -Aidan -->
+    <nav class="navbar navbar-expand-lg header shadow">
+        <div class="container-fluid">
+
+            <a class="headerTitle" style="color: gold" href="/driver/sign-up-page">SpartanRide</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link nav" href="/templates/about_us.html">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav" href="rider_home.html">Ride</a>
+                    </li>
+
+                    <li class="nav-item" th:each="driver : ${driver}">
+                        <a class="nav-link nav" th:href="@{/driver/driverProfile/{id}(id = ${driver.id})}">Drive</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link nav" href="admin_home.html">Admin</a>
+                    </li>
+                </ul>
+
+                <button type="button" class="btn" style="border-radius: 20px;
+                        background-color: blanchedalmond;margin-right: 10px">
+
+                    <a href="/driver/sign-up-page">Sign Up</a>
+
+                </button>
+
+                <button type="button" class="btn" style="border-radius: 20px;
+                        background-color: blanchedalmond ;margin-left: 10px">
+
+                    Log In
+
+                </button>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Log In Below</h5>
+                        <p class="card-text"> Please enter your email and password.</p>
+                    </div>
+                </div>
+                <div class="text1 infoBox">
+                    <form action="/driver/login" method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Email"/>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" id="password" name="password" placeholder="Password"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <br>
+                    <br>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>>
+</body>
+
+
+
+</html>

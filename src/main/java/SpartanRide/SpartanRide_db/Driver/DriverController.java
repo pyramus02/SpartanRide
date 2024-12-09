@@ -45,6 +45,26 @@ public class DriverController {
         return "redirect:/driver/driverProfile/" + driver.getId();
     }
 
+    @PostMapping("/login")
+    public String logIn(@RequestParam String email,@RequestParam String password, Model model) {
+        Driver driver = service.findDriverByEmail(email);
+        model.addAttribute("driver", driver);
+
+        if (driver == null) {
+            model.addAttribute("error", "Driver not found");
+            return "home";
+        }
+
+        if(driver.getPassword().equals(password)) {
+            return "redirect:/driver/driverProfile/" + driver.getId();
+        }
+        else {
+            model.addAttribute("error", "Invalid password");
+            return "home";
+
+        }
+    }
+
 
 //    Page Redirects
 

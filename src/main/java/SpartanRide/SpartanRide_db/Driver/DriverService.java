@@ -40,4 +40,8 @@ public class DriverService {
         driverRepository.save(driver);
     }
 
+    public Driver findDriverByEmail(String email){
+        return driverRepository.findByEmail(email).orElse(null);
+    }
+
 }
