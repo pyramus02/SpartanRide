@@ -40,8 +40,4 @@ public class DriverService {
         driverRepository.save(driver);
     }
 
-    public void logIn(Driver driver) {
-        driverRepository.save(driver);
-    }
-
 }
