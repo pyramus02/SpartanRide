@@ -29,8 +29,17 @@ public class Rider {
     @Column(name = "driverId")
     private Integer driverId;
 
+
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "phone_num")
-    private Integer phoneNum;
+    private Integer phone_num;
+
+    @Column(name = "reported")
+    private Boolean reported;
+
+
 
     public Rider() {
 
@@ -88,7 +97,7 @@ public class Rider {
     public void setRider(Rider newRider) {
         this.email = newRider.getEmail();
         this.name = newRider.getName();
-        this.phoneNum = newRider.getPhoneNum();
+        this.phone_num = newRider.getPhoneNum();
         this.email = newRider.getEmail();
 
         if (newRider.getAccountStatus() != null) {
@@ -98,12 +107,29 @@ public class Rider {
 
 
     public int getPhoneNum() {
-        return phoneNum;
+        return phone_num;
     }
 
     public void setPhoneNum(int phoneNum) {
-        this.phoneNum = phoneNum;
+        this.phone_num = phoneNum;
     }
+
+
+    public String getPassword() {return this.password;}
+
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+
+
+    public Boolean getReported() {return this.reported;}
+
+    public void setReported(Boolean report) {this.reported = report;}
+
+
 
 
 }

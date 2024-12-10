@@ -1,8 +1,11 @@
 package SpartanRide.SpartanRide_db.Rider;
 
+import SpartanRide.SpartanRide_db.Driver.Driver;
 import SpartanRide.SpartanRide_db.Driver.DriverService;
+import SpartanRide.SpartanRide_db.Review.Review;
 import SpartanRide.SpartanRide_db.Review.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
@@ -41,28 +44,41 @@ public class RiderController {
     @PostMapping("/new")
     public String addNewRider(Rider rider) {
 
+
+        if (riderService.checkEmailDup(rider.getEmail())) {
+            return "redirect:/rider/signup-page";
+        }
+
+
+        rider.setAccountStatus("Online");
+        rider.setStatus("Online");
         riderService.addNewRider(rider);
-        return "redirect:/rider/riderHome";
+        return "redirect:/rider/riderHome/" + rider.getId();
 
 
 
 
     }
 
-    @PostMapping("/subscribe/{driverId}/{riderId}")
-    public Rider subscribe(@PathVariable int driverId,@PathVariable int riderId ) {
+    @GetMapping("/subscribe/{driverId}/{riderId}")
+    public String subscribe(@PathVariable int driverId,@PathVariable int riderId ) {
 
         driverService.addRider(driverId, riderId);
-        return riderService.subscribe(driverId, riderId);
+        riderService.subscribe(driverId, riderId);
+
+        return "redirect:/rider/riderHome/" + riderId;
 
     }
 
 
-    @PostMapping("/unsubscribe/{driverId}/{riderId}")
-    public Rider unsubscribe(@PathVariable int driverId,@PathVariable int riderId ) {
+    @GetMapping("/unsubscribe/{driverId}/{riderId}")
+    public String unsubscribe(@PathVariable int driverId,@PathVariable int riderId ) {
 
         driverService.removeRider(driverId, riderId);
-        return riderService.unsubscribe(driverId, riderId);
+        riderService.unsubscribe(driverId, riderId);
+
+        return "redirect:/rider/riderHome/" + riderId;
+
 
     }
 
@@ -73,34 +89,50 @@ public class RiderController {
     }
 
     @PostMapping("/logIn/{id}")
-    public String logIn(@PathVariable int id) {
+    public String logIn(int id) {
+
+
+
+
+
+
         riderService.logIn(id);
 
-        return "redirect:/rider/riderHome";
+
+
+
+        return "redirect:/rider/riderHome/" + id;
     }
 
     @PostMapping("/login")
     public String login(int riderId) {
 
+
+
+
+
         riderService.logIn(riderId);
 
         if (riderService.getRiderById(riderId) != null) {
-            return "redirect:/rider/riderHome";
+            return "redirect:/rider/riderHome/" + riderId;
         }
 
         return "redirect:/rider/login-page";
     }
 
 
-    @PutMapping("/logOut/{id}")
-    public Rider logOut(@PathVariable int id) {
+    @GetMapping("/logOut/{id}")
+    public String logOut(@PathVariable int id) {
         riderService.logOut(id);
-        return riderService.getRiderById(id);
+
+
+
+        return "redirect:/rider/login-page";
     }
 
     @GetMapping("/login-page")
     public String loginPage() {
-        return "log_in";
+        return "rider_log_in";
     }
 
 
@@ -110,9 +142,110 @@ public class RiderController {
     }
 
 
-    @GetMapping("/riderHome")
-    public String riderHome() {
+    @GetMapping("/riderHome/{id}")
+    public String riderHome(Model model, @PathVariable Integer id) {
+
+
+
+
+        Rider curr = riderService.getRiderById(id);
+        model.addAttribute("rider", curr);
+
+        List<Driver> drivers = driverService.getAllDrivers();
+        model.addAttribute("driverList", drivers);
+
+
         return "rider_home";
     }
+
+
+    @GetMapping("riderHome/review/new")
+    public String newReview(Review review) {
+        reviewService.addReview(review);
+        return "redirect:/rider/riderHome/" + review.getAuthorId();
+    }
+
+
+
+
+
+
+
+    @PostMapping("/logIn")
+    public String logIn(String email, String password) {
+
+
+        Rider rider = riderService.getRiderByCred(email, password);
+
+
+
+
+
+    if (rider == null) {
+        return "redirect:/rider/login-page";
+
+        }
+
+
+        System.out.println(rider.getAccountStatus());
+
+
+        if (rider.getAccountStatus() == null) {
+            rider.setAccountStatus("Online");
+        }
+
+
+        rider.setStatus("Online");
+        riderRepository.save(rider);
+
+
+
+        if (rider.getAccountStatus().equals("Banned")) {
+            return "redirect:/rider/login-page";
+        }
+
+
+        if (riderService.getCred(rider) && rider.getAccountStatus() != "Banned") {
+
+            riderService.logIn(rider.getId());
+
+            return "redirect:/rider/riderHome/" + rider.getId();
+
+        }
+
+
+
+        return "redirect:/rider/login-page";
+    }
+
+
+
+
+
+
+    @GetMapping("/report-driver/{driverId}/{riderId}")
+    public String reportDriver(@PathVariable Integer driverId, @PathVariable Integer riderId) {
+
+        Driver thisDr = driverService.getDriverById(driverId);
+        thisDr.setReported(true);
+        driverService.updateProfile(driverId, thisDr);
+
+
+
+        return "redirect:/rider/riderHome/" + riderId;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 }
