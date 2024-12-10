@@ -13,16 +13,16 @@ public class Driver {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
 
     @Column(name = "car_model")
     private String carModel;
 
-    @Column(name = "plate_num", nullable = false)
+    @Column(name = "plate_num", nullable = true)
     private String plateNum;
 
     @Column(name = "phone_num")
@@ -37,14 +37,27 @@ public class Driver {
     @Column(name = "accountStatus")
     private String accountStatus;
 
+    @Column(name = "embarkment")
+    private String embarkment;
 
-    @Column(name = "riders", nullable = true)
+
+    @Column(name = "riders")
     private List<Integer> riders;
 
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "capacity")
+    private Integer capacity;
+
+
+    @Column(name = "reported")
+    private Boolean reported;
 
 
 
 
+/**
     public Driver(int id, String name, String email, String carModel, String plateNum, int phoneNum, String status, String destination, String accountStatus) {
         this.id = id;
         this.name = name;
@@ -67,10 +80,10 @@ public class Driver {
 
     }
 
+ **/
 
-    public Driver() {
 
-    }
+
 
     public String getAccountStatus(){
         return this.accountStatus;
@@ -158,5 +171,44 @@ public class Driver {
 
         return this.riders;
     }
+
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmbarkment(String embarkment) {
+        this.embarkment = embarkment;
+    }
+
+    public String getEmbarkment() {
+        return this.embarkment;
+    }
+
+
+    public void setCapacity(int cap) {
+        this.capacity = cap;
+    }
+
+    public Integer getCapacity() {
+        return this.capacity;
+    }
+
+
+    public Boolean getReported() {return this.reported;}
+
+    public void setReported(Boolean report) {this.reported = report;}
+
+
+
+
+
+
+
 
 }

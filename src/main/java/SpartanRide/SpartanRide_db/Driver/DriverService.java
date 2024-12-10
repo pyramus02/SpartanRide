@@ -19,6 +19,17 @@ public class DriverService {
      *
      * @return the list of all Drivers.
      */
+
+
+
+    public void addNewDriver(Driver driver) {
+        driverRepository.save(driver);
+    }
+
+
+
+
+
     public List<Driver> getAllDrivers() {
         return driverRepository.findAll();
     }
@@ -56,13 +67,13 @@ public class DriverService {
      *
      * @return details of a specific Driver.
      */
-    public void carRegistration(int id, String plate_num,Driver driver) {
+    public void carRegistration(int id, Driver driver) {
         Driver existing = getDriverById(id);
-        existing.setPlateNum(plate_num);
+        existing.setCarModel(driver.getCarModel());
+        existing.setPlateNum(driver.getPlateNum());
 
         driverRepository.save(existing);
     }
-
     public void startRide(int id, Driver driver) {
         Driver existing = getDriverById(id);
         existing.setStatus("Driving");
@@ -149,9 +160,42 @@ public class DriverService {
         }
     }
 
+    public boolean getCred(Driver driver) {
+
+        if (driverRepository.getCred(driver.getEmail(), driver.getPassword()) == null) {
+            return false;
+
+        }
+
+        return true;
 
 
 
+    }
+
+    public Driver getDriverByCred(String email, String password) {
+
+
+
+        return driverRepository.getCred(email, password);
+    }
+
+
+
+
+    public Boolean checkEmailDup(String email) {
+
+        if (driverRepository.checkEmailDup(email) == null) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    public List<Driver> getNaughtyDrivers() {
+        return driverRepository.getBadDrivers();
+    }
 
 
 

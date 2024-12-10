@@ -2,6 +2,7 @@ package SpartanRide.SpartanRide_db.Review;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -11,15 +12,17 @@ public class ReviewController {
 
     @Autowired ReviewService reviewService;
 
+    @Autowired ReviewRepository reviewRepository;
+
 
     /**
      *
      * {"reviewText": An interesting review}
      */
-    @PostMapping("/new")
-    public Review newReview( @RequestBody Review review) {
+    @GetMapping("/new")
+    public String newReview(Review review) {
         reviewService.addReview(review);
-        return review;
+        return "redirect:rider/riderHome/" + review.getAuthorId();
     }
 
     @GetMapping("/all")
@@ -42,6 +45,25 @@ public class ReviewController {
 
         reviewService.deleteReviewById(reviewId);
         return reviewService.getAllReviews();
+    }
+
+    @GetMapping("/report/{driverId}/{reviewId}")
+    public RedirectView report(@PathVariable Integer driverId, @PathVariable Integer reviewId) {
+
+
+        Review thisReview = reviewService.getReviewById(reviewId);
+        thisReview.setReported(true);
+
+        reviewRepository.save(thisReview);
+
+
+
+
+
+
+        return new RedirectView("/driver/driverProfile/" + driverId);
+
+
     }
 
 }

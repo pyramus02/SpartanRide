@@ -26,6 +26,12 @@ public class Review implements Serializable {
 
 
 
+    @Column(name = "reported")
+    private Boolean reported;
+
+
+
+
     public Review(String reviewText, int authorId, int subjectId) {
 
         this.subjectId = subjectId;
@@ -68,6 +74,12 @@ public class Review implements Serializable {
     public void setAuthorId(int author) {
         this.authorId = author;
     }
+
+
+    public Boolean getReported() {return this.reported;}
+
+    public void setReported(Boolean report) {this.reported = report;}
+
 
 
 }

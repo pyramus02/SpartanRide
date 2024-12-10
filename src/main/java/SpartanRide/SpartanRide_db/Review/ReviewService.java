@@ -1,6 +1,7 @@
 package SpartanRide.SpartanRide_db.Review;
 
 
+import SpartanRide.SpartanRide_db.Driver.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,18 @@ public class ReviewService {
         reviewRepository.save(newRev);
         return newRev;
     }
+
+
+    public Review getReviewById(int id) {
+        return reviewRepository.findById(id).orElse(null);
+    }
+
+
+
+
+
+
+
     public List<Review> getAllReviews() {
         return reviewRepository.findAll();
     }
@@ -36,9 +49,16 @@ public class ReviewService {
 
     }
 
+
+    public List<Review > getReports() {
+        return reviewRepository.getReports();
+    }
+
     public void deleteReviewById(int reviewId) {
         reviewRepository.deleteById(reviewId);
     }
+
+
 
 
 

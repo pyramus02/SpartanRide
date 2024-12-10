@@ -4,7 +4,9 @@ import SpartanRide.SpartanRide_db.*;
 import SpartanRide.SpartanRide_db.Driver.Driver;
 import SpartanRide.SpartanRide_db.Driver.DriverService;
 import SpartanRide.SpartanRide_db.Review.Review;
+import SpartanRide.SpartanRide_db.Review.ReviewRepository;
 import SpartanRide.SpartanRide_db.Rider.Rider;
+import SpartanRide.SpartanRide_db.Rider.RiderRepository;
 import SpartanRide.SpartanRide_db.Rider.RiderService;
 import SpartanRide.SpartanRide_db.Review.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,11 @@ public class AdminController {
 
     @Autowired
     private ReviewService reviewService;
+
+    @Autowired ReviewRepository reviewRepository;
+
+    @Autowired
+    private RiderRepository riderRepository;
 
 
 
@@ -92,7 +99,7 @@ public class AdminController {
     }
 
     @GetMapping("/stats")
-    public Stats showStats() {
+    public String showStats(Model model) {
 
         int driverTotal = adminService.getDriverTotal();
         int riderTotal = adminService.getRiderTotal();
@@ -102,7 +109,10 @@ public class AdminController {
 
         Stats currStats = new Stats(driverTotal, riderTotal, driverOnline, riderOnline);
 
-        return currStats;
+        model.addAttribute("stat", currStats);
+
+
+        return "/admin_statistics";
 
 
     }
@@ -114,12 +124,34 @@ public class AdminController {
     }
 
     @GetMapping("/admin-access")
-    public String adminAccess() {
+    public String adminAccess(Model model) {
+
+        List<Driver> reportList = driverService.getNaughtyDrivers();
+        model.addAttribute("driverList", reportList);
+
+
+        List<Rider> riderList = riderService.getNaughtyRiders();
+        model.addAttribute("riderList", riderList);
+
+
+
         return "admin_access";
     }
 
     @GetMapping("/admin-review")
-    public String adminReview() {
+    public String adminReview(Model model) {
+
+
+
+        List<Review> reports = reviewService.getReports();
+
+
+
+        model.addAttribute("reviewList", reports);
+
+
+
+
         return "admin_review";
     }
 
@@ -150,6 +182,47 @@ public class AdminController {
     }
 
 
+    @GetMapping("/dismiss-driver/{driverId}")
+    public String dismissDriver(@PathVariable Integer  driverId, Model model) {
+
+
+        Driver thisDr = driverService.getDriverById(driverId);
+        thisDr.setReported(false);
+        driverService.updateProfile(driverId, thisDr);
+
+
+        return "redirect:/admin/admin-access";
+    }
+
+
+    @GetMapping("/dismiss-rider/{riderId}")
+    public String dismissRider(@PathVariable Integer riderId, Model model) {
+
+
+        Rider thisR = riderService.getRiderById(riderId);
+        thisR.setReported(false);
+        riderRepository.save(thisR);
+
+
+
+        return "redirect:/admin/admin-access";
+    }
+
+
+    @GetMapping("/dismiss-review/{reviewId}")
+    public String dismissReview(@PathVariable Integer reviewId) {
+
+        Review thisR = reviewService.getReviewById(reviewId);
+        thisR.setReported(false);
+        reviewRepository.save(thisR);
+
+        return "redirect:/admin/admin-review";
+
+
+    }
+
+
+
 
     @PostMapping("/destroy-review")
     public String killReview(Integer driverId, Integer riderId) {
@@ -162,6 +235,12 @@ public class AdminController {
         }
         return "redirect:/admin/admin-review";
     }
+
+
+
+
+
+
 
 
 }

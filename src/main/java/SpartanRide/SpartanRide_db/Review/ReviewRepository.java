@@ -18,4 +18,7 @@ public interface ReviewRepository extends JpaRepository<Review, Integer> {
     Review getReviewOfSubByAuth(int subjectId, int authorId);
 
 
+
+    @Query(value = "SELECT * FROM review WHERE reported = true", nativeQuery = true)
+    List<Review> getReports();
 }
