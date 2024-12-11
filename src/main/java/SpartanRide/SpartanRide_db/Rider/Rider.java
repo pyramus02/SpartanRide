@@ -39,8 +39,6 @@ public class Rider {
     @Column(name = "reported")
     private Boolean reported;
 
-
-
     public Rider() {
 
     }
