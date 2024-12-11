@@ -1,95 +1,122 @@
 <!DOCTYPE html>
-<html style="background-color: #bac5f5" lang="en" xmlns:th="https://www.thymeleaf.org">
+<html style="background-color: #bac5f5" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
+    <title>SpartanRide Rider SignUp</title>
     <meta charset="UTF-8">
-    <title>SpartanRide - SignUp</title>
-
-
-    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css}" rel="stylesheet">
-
-
-    <link th:href="@{/css/master.css}" rel="stylesheet">
-
-
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/master.css"
+          th:href="@{/css/master.css}" />
 </head>
 
 <body style="background-color: #bac5f5">
 
-<div class="page-container">
+<!--This is the nav bar that goes on top of each page -Aidan -->
+<nav class="navbar navbar-expand-lg header shadow">
+    <div class="container-fluid">
 
-    <nav class="navbar navbar-expand-lg header shadow">
-        <div class="container-fluid">
+        <a class="headerTitle" style="color: gold" href="/driver/sign-up-page">SpartanRide</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
 
 
-            <a class="headerTitle" style="color: gold" th:href="@{/}">
-                SpartanRide
-            </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+
+
+            </ul>
+
+            <button type="button" class="btn" style="border-radius: 20px;
+                        background-color: blanchedalmond;margin-right: 10px">
+
+                <a href="/rider/signup-page">Sign Up</a>
+
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
+            <button type="button" class="btn" style="border-radius: 20px;
+                        background-color: blanchedalmond ;margin-left: 10px">
 
-                    <li class="nav-item">
-                        <a class="nav-link nav">About Us</a>
-                    </li>
+                <a href="/rider/login-page">Login</a>
 
-                    <li class="nav-item">
-                        <a class="nav-link nav">Ride</a>
-                    </li>
+            </button>
 
-                    <li class="nav-item">
-                        <a class="nav-link nav" >Drive</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link nav" >Admin</a>
-                    </li>
-                </ul>
-
-                <a href = "/rider/signup-page" type="button" class="btn" style="border-radius: 20px; margin-right: 10px">
-                    Sign Up
-                </a>
-
-                <a href="/rider/login-page" type="button" class="btn" style="border-radius: 20px;  margin-left: 10px">
-                    Log In
-                </a>
-
-            </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<div class="floatContainer page-container" style="margin-left: 0; padding-left: 0; padding-right: 10px">
+    <!-- Left Body Content -->
+    <div class="floatChild" style="width: 60%;">
+        <h1 class="title1">
+            Travel, Socialize, and <br>
+            be Productive with Spartan Ride!
+        </h1>
+
+        <h2 class="text1">
+            Spartan Ride is a carpooling service for students attending UNCG! <br>
+            Allowing students to not only save money, but to build relationships as well.
+            <br>
+            <br>
+            Starting is easy! All you have to do is verify your status as a <br>
+            student at UNCG, make an account, and then you can start driving!
+        </h2>
 
 
-    <form action="/rider/new" method="post" class="mt-4">
-        <div class="form-group form-group-sm" style="color: gold;">
-            <label for="name">Name</label>
-            <input type="text" class="form-control input-sm" id="name" name="name" required min="1"  style="width: 200px;">
-        </div>
+    </div>
 
-        <div class="form-group form-group-sm" style="color: gold;">
-            <label for="email">Email</label>
-            <input type="email" class="form-control input-sm" id="email" name="email" required min="7"  style="width: 200px;">
+    <!-- Right Body Content -->
+    <div class="floatChild signUpBox shadow">
+
+        <div class="text-lg-center signTitle">
+            Rider Sign Up
         </div>
 
-        <div class="form-group form-group-sm" style="color: gold;">
-            <label for="phone_num">Phone Number</label>
-            <input type="number" class="form-control input-sm" id="phone_num" name="phone_num" required min="10"  style="width: 200px;">
+        <div class="text1 infoBox">
+            <form action="/rider/new" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name"/>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Email"/>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" id="password" name="password" placeholder="Password"/>
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <br>
+            <br>
+
         </div>
 
+    </div>
 
-        <button type="submit" class="btn btn-success">Create</button>
-    </form>
-
-
-
-    <footer class="mt-auto py-3">
+    <footer>
         <h1 class="headerTitle">
             SpartanRide
         </h1>
     </footer>
 
+</div>
+
+
+
 </body>
+
 </html>

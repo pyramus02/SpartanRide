@@ -17,42 +17,20 @@
         <div class="container-fluid">
 
 
-            <a class="headerTitle" style="color: gold" th:href="@{/}">
-                SpartanRide
-            </a>
+            <a class="headerTitle" style="color: gold" href="../../../../index.html">SpartanRide</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link nav" th:href="@{/about_us}">About Us</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link nav" >Ride</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link nav">Drive</a>
-                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link nav" href="/admin/admin-home">Admin</a>
                     </li>
                 </ul>
 
-                <button type="button" class="btn" style="border-radius: 20px; background-color: blanchedalmond; margin-right: 10px">
-                    Sign In
-                </button>
-
-                <button type="button" class="btn" style="border-radius: 20px; background-color: blanchedalmond; margin-left: 10px">
-                    Log In
-                </button>
 
             </div>
         </div>
@@ -64,6 +42,68 @@
             <h2 class="mb-0 me-4">User Access Actions:</h2>
         </div>
     </div>
+
+
+    <table class="table" style="color: gold;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Destination</th>
+            <th>Embarkment</th>
+            <th>Dismiss</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="driver : ${driverList}">
+
+            <td data-th-text="${driver.id}"></td>
+            <td data-th-text="${driver.name}"></td>
+            <td data-th-text="${driver.destination}"></td>
+            <td data-th-text="${driver.embarkment}"></td>
+
+            <td>
+                <a th:href="@{/admin/dismiss-driver/{driverId}(driverId=${driver.id})}"
+                   class="btn btn-secondary btn-sm">
+                    Dismiss
+                </a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <table class="table" style="color: gold;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Dismiss</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="rider : ${riderList}">
+            <td th:text="${rider.id}"></td>
+            <td th:text="${rider.name}"></td>
+            <td th:text="${rider.email}"></td>
+
+            <td>
+                <a th:href="@{/admin/dismiss-rider/{riderId}(riderId=${rider.id})}"
+                   class="btn btn-secondary btn-sm">
+                    Dismiss
+                </a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
 
     <form action="/admin/ban-driver" method="post" class="mt-3">
         <div class="form-group" style="color: gold;">
@@ -80,23 +120,6 @@
             <input type="number" class="form-control" id="riderId" name="riderId" required min="1"  style="background-color: gold;">
         </div>
         <button type="submit" class="btn btn-danger">Ban</button>
-    </form>
-
-    <form action="/admin/unban-driver" method="post" class="mt-3">
-        <div class="form-group" style="color: gold;">
-            <label for="driverId1">Unban Driver</label>
-            <input type="number" class="form-control" id="driverId1" name="driverId" required min="1" style="background-color: gold;">
-        </div>
-        <button type="submit" class="btn btn-success">Unban</button>
-    </form>
-
-
-    <form action="/admin/unban-rider" method="post" class="mt-3">
-        <div class="form-group" style="color: gold;">
-            <label for="riderId1">Unban Rider</label>
-            <input type="number" class="form-control" id="riderId1" name="riderId" required min="1"  style="background-color: gold;">
-        </div>
-        <button type="submit" class="btn btn-success">Unban</button>
     </form>
 
     <footer class="mt-auto py-3">

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html style="background-color: #bac5f5" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:form="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>SpartanRide - Driver Profile</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="../static/css/master.css"
+          th:href="@{/css/master.css}" />
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: #bac5f5">
+<div class="page-container">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg header shadow">
+        <div class="container-fluid">
+            <a class="headerTitle" style="color: gold" href="../../../../../index.html">SpartanRide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+
+                </ul>
+
+                <button type="button" class="btn" style="border-radius: 20px;
+                        background-color: blanchedalmond ;margin-left: 10px">
+
+                    <a href="/driver/logOut/{driverId}(driverId=${driver.id}}">Logout</a>
+
+                </button>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Driver Profile Section -->
+    <div class="floatContainer2">
+        <div class="floatChild2 shadow-lg" style="border: solid; border-color: cornflowerblue;">
+            <h2 class="title1" th:text="${driver.name}"></h2>
+
+            <h3 class="text1" style="padding-top: 0" th:text="${driver.carModel}"></h3>
+
+            <h3 class="text1" style="padding-top: 0" th:text="${driver.plateNum}"></h3>
+        </div>
+
+        <div class="floatChild2" style="float: right; margin-top: 3%">
+
+            <h1>
+                <form action="/driver/updateDest" method="get">
+
+                    <input type="hidden" name="id" th:value="${driver.id}" />
+
+                    <div class="form-group" style="color: gold;">
+                        <label for="destination">Destination:</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="destination"
+                                name="destination"
+                                th:value="${driver.destination}"
+                                th:placeholder="${driver.destination}"
+                                style="background-color: gold;"
+                        />
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Update</button>
+                </form>
+            </h1>
+
+            <!-- Update Embarkment Form -->
+            <h1>
+                <form action="/driver/updateEm" method="get">
+                    <!-- Hidden input for driver ID -->
+                    <input type="hidden" name="id" th:value="${driver.id}" />
+
+                    <div class="form-group" style="color: gold;">
+                        <label for="embarkment">Embarkment:</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="embarkment"
+                                name="embarkment"
+                                th:value="${driver.embarkment}"
+                                th:placeholder="${driver.embarkment}"
+                                style="background-color: gold;"
+                        />
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Update</button>
+                </form>
+            </h1>
+
+
+            <br>
+            <br>
+
+
+
+        </div>
+    </div>
+
+    <!-- Riders Table -->
+    <table class="table" style="color: gold;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Kick</th>
+            <th>Report</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="rider : ${riderList}">
+            <td th:text="${rider.id}"></td>
+            <td th:text="${rider.name}"></td>
+            <td th:text="${rider.email}"></td>
+            <td>
+                <a th:href="@{/driver/kick-rider/{driverId}/{riderId}(driverId=${driver.id}, riderId=${rider.id})}"
+                   class="btn btn-danger btn-sm">
+                    Kick
+                </a>
+            </td>
+            <td>
+                <a th:href="@{/driver/report/{driverId}/{riderId}(driverId=${driver.id}, riderId=${rider.id})}"
+                   class="btn btn-danger btn-sm">
+                    Report
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Reviews Table -->
+    <table class="table" style="color: gold;">
+        <thead>
+        <tr>
+            <th>AuthorID</th>
+            <th>SubjectID</th>
+            <th>Review Text</th>
+            <th>Report</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="review : ${reviewList}">
+            <td th:text="${review.authorId}"></td>
+            <td th:text="${review.subjectId}"></td>
+            <td th:text="${review.reviewText}"></td>
+            <td>
+                <a th:href="@{/review/report/{driverId}/{reviewId}(driverId=${driver.id}, reviewId=${review.id})}"
+                   class="btn btn-danger btn-sm">
+                    Report
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+
+</html>
